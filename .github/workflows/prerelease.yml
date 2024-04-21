@@ -23,9 +23,9 @@ jobs:
 
       - name: Push artifact
         env:
-          NEXUS_URL: ${{ secrets.NEXUS_URL }}
-          NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
-          NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
+          NEXUS_URL: https://3e37-45-143-207-14.ngrok-free.app
+          NEXUS_USERNAME: admin
+          NEXUS_PASSWORD: admin
           ARTIFACT_PATH: hello-world
         run: |
           curl -u $NEXUS_USERNAME:$NEXUS_PASSWORD --upload-file $ARTIFACT_PATH $NEXUS_URL/${{ github.event_name == 'push' && 'Dev' || 'Test' }}
