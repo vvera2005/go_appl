@@ -28,4 +28,4 @@ jobs:
           NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
           ARTIFACT_PATH: hello-world
         run: |
-          curl -u $NEXUS_USERNAME:$NEXUS_PASSWORD --upload-file $ARTIFACT_PATH $NEXUS_URL/${{ github.event_name == 'push' && 'Dev' || 'Test' }}/hello-world
+          curl -u $NEXUS_USERNAME:$NEXUS_PASSWORD --upload-file $ARTIFACT_PATH $NEXUS_URL/repository/${{ github.event_name == 'push' && 'Dev' || 'Test' }}/hello-world
