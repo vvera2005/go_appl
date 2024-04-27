@@ -17,13 +17,13 @@ jobs:
             uses: actions/checkout@v2
 
           - name: Build and package artifact
-            run: go build -v -o ${{ github.ref }} .
+            run: go build -v -o ${{ github.event.release.tag_name }} .
 
           - name: Push artifact
             env:
               NEXUS_URL: ${{ secrets.NEXUS_URL }}
               NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
               NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
-              ARTIFACT_PATH: ${{ github.ref }}
+              ARTIFACT_PATH: ${{ github.event.release.tag_name }}
             run: |
-              curl -u $NEXUS_USERNAME:$NEXUS_PASSWORD --upload-file $ARTIFACT_PATH $NEXUS_URL/repository/Prod/${{ github.ref }}
+              curl -u $NEXUS_USERNAME:$NEXUS_PASSWORD --upload-file $ARTIFACT_PATH $NEXUS_URL/repository/Prod/${{ github.event.release.tag_name }}
