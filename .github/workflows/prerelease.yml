@@ -23,7 +23,7 @@ jobs:
 
       - name: Push artifact
         env:
-          NEXUS_URL: https://3e37-45-143-207-14.ngrok-free.app
+          NEXUS_URL: ${{ secrets.NEXUS_URL }}
           NEXUS_USERNAME: admin
           NEXUS_PASSWORD: admin
           ARTIFACT_PATH: hello-world
