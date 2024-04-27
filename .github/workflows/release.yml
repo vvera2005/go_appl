@@ -26,4 +26,4 @@ jobs:
               NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
               ARTIFACT_PATH: ${{ github.ref }}
             run: |
-              curl -u $NEXUS_USERNAME:$NEXUS_PASSWORD --upload-file $ARTIFACT_PATH $NEXUS_URL/Prod/${{ github.ref }}
+              curl -u $NEXUS_USERNAME:$NEXUS_PASSWORD --upload-file $ARTIFACT_PATH $NEXUS_URL/repository/Prod/${{ github.ref }}
