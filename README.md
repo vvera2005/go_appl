@@ -1,4 +1,4 @@
-<!--![nexus-repo-github-action-test](https://github.com/bhamail/nexus-repo-github-action-test/workflows/Go/badge.svg)-->
+.<!--![nexus-repo-github-action-test](https://github.com/bhamail/nexus-repo-github-action-test/workflows/Go/badge.svg)-->
 <a href="https://github.com/bhamail/nexus-repo-github-action-test/actions?query=workflow%3AGo"><img src="https://github.com/bhamail/nexus-repo-github-action-test/workflows/Go/badge.svg" alt="nexus-repo-github-action-test"></img></a>
 
 Nexus Repository Publisher GitHub Actions play project
